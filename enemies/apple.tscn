@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmfhqhpr5opor"]
+
+[ext_resource type="Texture2D" uid="uid://rhwd2xnah3vq" path="res://art/apple.png" id="1_pdffn"]
+[ext_resource type="Script" uid="uid://b0kuurbiurn5y" path="res://enemies/enemy.gd" id="1_r05cu"]
+
+[node name="Apple" type="Node2D"]
+script = ExtResource("1_r05cu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pdffn")

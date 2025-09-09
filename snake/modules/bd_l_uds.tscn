@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://w2xsm20db26p"]
+
+[ext_resource type="PackedScene" uid="uid://dvhnesvoq05cj" path="res://snake/modules/base_module.tscn" id="1_kpjh5"]
+[ext_resource type="Script" uid="uid://bdxs3x5t6c203" path="res://snake/modules/bd_l_uds.gd" id="2_ly82s"]
+[ext_resource type="Texture2D" uid="uid://c71drd0c476c5" path="res://art/laser_module.png" id="3_o2s63"]
+[ext_resource type="Texture2D" uid="uid://dstqidir0f356" path="res://art/laser_beam.png" id="4_4ri2p"]
+
+[node name="BD-L-UDS" instance=ExtResource("1_kpjh5")]
+script = ExtResource("2_ly82s")
+damage = 0
+current_cooldown = 3
+cooldown = 3
+unupgraded = 5
+
+[node name="Sprite" parent="." index="0"]
+texture_filter = 1
+texture = ExtResource("3_o2s63")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/laser_module.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "f3ebc5b3a0d41bb718c7e09fe9217b71"
+
+[node name="LaserTop" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(0, -183)
+texture = ExtResource("4_4ri2p")
+
+[node name="LaserBottom" type="Sprite2D" parent="." index="2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(0, 183)
+rotation = 3.14159
+texture = ExtResource("4_4ri2p")

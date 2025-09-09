@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyutapw2aqpis"]
+
+[ext_resource type="PackedScene" uid="uid://dvhnesvoq05cj" path="res://snake/modules/base_module.tscn" id="1_04wl5"]
+[ext_resource type="Texture2D" uid="uid://dw0ptpsq4lpys" path="res://art/health_module.png" id="2_1vf2u"]
+[ext_resource type="Script" uid="uid://04i8lsrv3iwr" path="res://snake/modules/bd_h_hn.gd" id="2_jioio"]
+
+[node name="bd_h_hn" instance=ExtResource("1_04wl5")]
+script = ExtResource("2_jioio")
+max_health = 3
+current_cooldown = 3
+cooldown = 3
+unupgraded = 5
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_1vf2u")

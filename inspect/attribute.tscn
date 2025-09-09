@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://w322p6ikf4yx"]
+
+[ext_resource type="Script" uid="uid://c1re2aubupekw" path="res://inspect/attribute.gd" id="1_ecrpk"]
+[ext_resource type="Texture2D" uid="uid://dlps60wswsqdr" path="res://art/inspect_symbols/attack.png" id="1_m56er"]
+
+[node name="Attribute" type="CenterContainer"]
+script = ExtResource("1_ecrpk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_m56er")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "dsadsad"

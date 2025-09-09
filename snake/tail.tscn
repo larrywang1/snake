@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dje1hen2wab3k"]
+
+[ext_resource type="Texture2D" uid="uid://bl0inc3k16dc3" path="res://art/snake_tail.png" id="1_4vgik"]
+[ext_resource type="Script" uid="uid://djwn83e7l2urg" path="res://snake/tail.gd" id="1_a1lef"]
+
+[node name="Tail" type="Node2D" groups=["snake", "tail"]]
+script = ExtResource("1_a1lef")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("1_4vgik")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/snake_tail.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3d692930527ec86fcfad06b3c18f5453"

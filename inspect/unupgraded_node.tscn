@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://do7nt4e5k3ybo"]
+
+[ext_resource type="Texture2D" uid="uid://gd07ooiprhu8" path="res://art/inspect_symbols/empty_upgrade_node.png" id="1_u2ykx"]
+
+[node name="UnupgradedNode" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u2ykx")

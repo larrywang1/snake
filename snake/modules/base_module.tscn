@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvhnesvoq05cj"]
+
+[ext_resource type="Script" uid="uid://b5l0g4vytxtvs" path="res://snake/modules/base_module.gd" id="1_f5oai"]
+
+[node name="BaseModule" type="Node2D"]
+script = ExtResource("1_f5oai")
+
+[node name="Sprite" type="Sprite2D" parent="."]

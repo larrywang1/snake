@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://bprc68legeyse"]
+
+[ext_resource type="Script" uid="uid://cw4jkenr36m2p" path="res://snake/snake.gd" id="1_iujm3"]
+[ext_resource type="Texture2D" uid="uid://8pent0r7867a" path="res://art/default_snake_head.png" id="1_j2kkt"]
+[ext_resource type="Script" uid="uid://cxi4o4mdju0kr" path="res://snake/snake_base.gd" id="1_vtpab"]
+[ext_resource type="Texture2D" uid="uid://cwtx5lrls8muj" path="res://art/move_button.png" id="2_vtpab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwqi7"]
+atlas = ExtResource("1_j2kkt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6obg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqi7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Snake" type="Node2D" node_paths=PackedStringArray("head", "bodies")]
+script = ExtResource("1_vtpab")
+head = NodePath("Head")
+bodies = NodePath("Body")
+
+[node name="Head" type="Node2D" parent="." groups=["head", "snake"]]
+script = ExtResource("1_iujm3")
+
+[node name="HeadSprite" type="AnimatedSprite2D" parent="Head"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_c6obg")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/default_snake_head.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d69bb872ac64ed0c7a2dae248fb5284f"
+
+[node name="Buttons" type="Node2D" parent="Head"]
+
+[node name="Up" type="TextureButton" parent="Head/Buttons"]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = -8.0
+texture_normal = ExtResource("2_vtpab")
+
+[node name="Down" type="TextureButton" parent="Head/Buttons"]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 24.0
+texture_normal = ExtResource("2_vtpab")
+flip_v = true
+
+[node name="Right" type="TextureButton" parent="Head/Buttons"]
+unique_name_in_owner = true
+offset_left = 24.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+rotation = 1.5708
+texture_normal = ExtResource("2_vtpab")
+
+[node name="Left" type="TextureButton" parent="Head/Buttons"]
+unique_name_in_owner = true
+offset_left = -24.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 24.0
+rotation = -1.5708
+texture_normal = ExtResource("2_vtpab")
+
+[node name="Body" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Head/Buttons/Up" to="Head" method="_on_up_pressed"]
+[connection signal="pressed" from="Head/Buttons/Down" to="Head" method="_on_down_pressed"]
+[connection signal="pressed" from="Head/Buttons/Right" to="Head" method="_on_right_pressed"]
+[connection signal="pressed" from="Head/Buttons/Left" to="Head" method="_on_left_pressed"]

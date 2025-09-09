@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2twk38c8p1c4"]
+
+[ext_resource type="Script" uid="uid://ddmtupxdk3i6r" path="res://level/level_large.gd" id="1_qt3ee"]
+[ext_resource type="Texture2D" uid="uid://c0t05r2vvwjqr" path="res://art/Layer 1.png" id="2_h5a34"]
+[ext_resource type="Texture2D" uid="uid://m6yttdhtp5b3" path="res://art/Layer 2.png" id="3_e4ed7"]
+[ext_resource type="Texture2D" uid="uid://b56b7csqdlfjr" path="res://art/white_highlight.png" id="4_h5a34"]
+[ext_resource type="Texture2D" uid="uid://dw6bcso5j4gio" path="res://art/green_highlight.png" id="5_e4ed7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4ed7"]
+texture = ExtResource("4_h5a34")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r2pyq"]
+sources/0 = SubResource("TileSetAtlasSource_e4ed7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2pyq"]
+texture = ExtResource("5_e4ed7")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gf8d3"]
+sources/0 = SubResource("TileSetAtlasSource_r2pyq")
+
+[node name="LevelLarge" type="Node2D" node_paths=PackedStringArray("snake_node") groups=["level"]]
+script = ExtResource("1_qt3ee")
+snake_node = NodePath("Snake")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = 3
+texture_filter = 1
+position = Vector2(152, -112)
+texture = ExtResource("2_h5a34")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Layer 1"],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/large_level.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "248c2d8a7315d5ae88e94e5eecdc74ef"
+
+[node name="Camera2D" type="Camera2D" parent="Background"]
+
+[node name="Background" type="Sprite2D" parent="Background"]
+z_index = -2
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("3_e4ed7")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Layer 2"],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/large_level.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "248c2d8a7315d5ae88e94e5eecdc74ef"
+
+[node name="Snake" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="." groups=["projectiles"]]
+
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="White" type="TileMapLayer" parent="TileMap"]
+position = Vector2(-8, -8)
+tile_set = SubResource("TileSet_r2pyq")
+
+[node name="Green" type="TileMapLayer" parent="TileMap" groups=["green"]]
+position = Vector2(-8, -8)
+tile_set = SubResource("TileSet_gf8d3")
+
+[node name="Inspect" type="CanvasLayer" parent="." groups=["inspect"]]

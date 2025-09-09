@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvl05wnyma8ov"]
+
+[ext_resource type="PackedScene" uid="uid://dvhnesvoq05cj" path="res://snake/modules/base_module.tscn" id="1_oxaon"]
+[ext_resource type="Texture2D" uid="uid://dir4uj2fcwcjc" path="res://art/bullet_module_1.png" id="2_ao0n3"]
+[ext_resource type="Script" uid="uid://br5h7y0fwijiv" path="res://snake/modules/bd_b_sa.gd" id="2_wnvc7"]
+
+[node name="bd_b_sa" instance=ExtResource("1_oxaon")]
+script = ExtResource("2_wnvc7")
+damage = 3
+max_health = 3
+current_cooldown = 3
+cooldown = 3
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_ao0n3")

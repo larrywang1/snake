@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://u5hp4o0bjbag"]
+
+[ext_resource type="Script" uid="uid://byoootelmovvi" path="res://snake/modules/bullet.gd" id="1_iqopg"]
+[ext_resource type="Texture2D" uid="uid://by31tp7j48n7w" path="res://art/bullet_large.png" id="1_ljtwp"]
+[ext_resource type="Texture2D" uid="uid://cnpmxga86pcb7" path="res://art/bullet_small.png" id="2_iqopg"]
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_iqopg")
+
+[node name="Big" type="Sprite2D" parent="."]
+texture = ExtResource("1_ljtwp")
+
+[node name="Small" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_iqopg")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvl2e11nokby"]
+
+[ext_resource type="Texture2D" uid="uid://dbyl4ga650fn" path="res://art/snake_body.png" id="1_8nb66"]
+[ext_resource type="Script" uid="uid://cuy2p2l1pijq8" path="res://snake/body.gd" id="1_kft47"]
+[ext_resource type="Texture2D" uid="uid://cyr1vtfgvl4p3" path="res://art/snake_turn.png" id="2_7l0xe"]
+
+[node name="Body" type="Node2D" groups=["snake"]]
+script = ExtResource("1_kft47")
+
+[node name="Straight" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_8nb66")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/snake_body.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d87126be5d62a40d0b6fb3e6a42f729b"
+
+[node name="Angle" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_7l0xe")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "res://art",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "C:/Users/edibl/Desktop/Snake/aseprite/snake_turn.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e180b0443660dd0de8bac29c3acba88d"

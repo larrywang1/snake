@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhue585yt1wd6"]
+
+[ext_resource type="PackedScene" uid="uid://dvhnesvoq05cj" path="res://snake/modules/base_module.tscn" id="1_k5jcb"]
+[ext_resource type="Texture2D" uid="uid://dstqidir0f356" path="res://art/laser_beam.png" id="2_gogwo"]
+[ext_resource type="Script" uid="uid://ciujsmce7pmfi" path="res://snake/modules/bd_l_am.gd" id="2_p5vyj"]
+[ext_resource type="Texture2D" uid="uid://b6grpq7duvfm3" path="res://art/laser_module_9.png" id="3_p5vyj"]
+
+[node name="bd_l_am" instance=ExtResource("1_k5jcb")]
+script = ExtResource("2_p5vyj")
+damage = 0
+max_health = 3
+current_cooldown = 3
+cooldown = 3
+unupgraded = 5
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_p5vyj")
+
+[node name="LaserTop" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(0, -183)
+texture = ExtResource("2_gogwo")
+
+[node name="LaserBottom" type="Sprite2D" parent="." index="2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(0, 183)
+rotation = 3.14159
+texture = ExtResource("2_gogwo")
+
+[node name="LaserRight" type="Sprite2D" parent="." index="3"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(183, 0)
+rotation = 1.5708
+texture = ExtResource("2_gogwo")
+
+[node name="LaserLeft" type="Sprite2D" parent="." index="4"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(-183, 0)
+rotation = -1.5708
+texture = ExtResource("2_gogwo")

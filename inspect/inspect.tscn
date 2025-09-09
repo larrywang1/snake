@@ -1,0 +1,261 @@
+[gd_scene load_steps=14 format=3 uid="uid://vqr0nnihnh3u"]
+
+[ext_resource type="Texture2D" uid="uid://cijn1670mbpwi" path="res://art/inspect.png" id="1_g01sg"]
+[ext_resource type="Script" uid="uid://x2mty0jed0wb" path="res://inspect/inspect.gd" id="1_t4atc"]
+[ext_resource type="FontFile" uid="uid://cenxix7tgom2x" path="res://fonts/m5x7.ttf" id="3_j0ffj"]
+[ext_resource type="Texture2D" uid="uid://dlps60wswsqdr" path="res://art/inspect_symbols/attack.png" id="4_sqoc2"]
+[ext_resource type="Texture2D" uid="uid://dnn7p5bq8a1g2" path="res://art/inspect_symbols/health.png" id="5_ha3js"]
+[ext_resource type="Texture2D" uid="uid://dcnqqt8dwlj4f" path="res://art/inspect_symbols/max_cooldown.png" id="6_2vem4"]
+[ext_resource type="Texture2D" uid="uid://c0yeccakwd0s0" path="res://art/inspect_symbols/cooldown.png" id="7_jjcjd"]
+[ext_resource type="Texture2D" uid="uid://bq2vmiwjuslf4" path="res://art/inspect_symbols/auto.png" id="8_38unx"]
+[ext_resource type="Texture2D" uid="uid://cyaltb4y02ix6" path="res://art/inspect_symbols/speed.png" id="9_x3hr8"]
+[ext_resource type="Texture2D" uid="uid://1fg58ejucrri" path="res://art/inspect_symbols/deactivated_button.png" id="10_qhepg"]
+[ext_resource type="Texture2D" uid="uid://lh8ijgsokcn8" path="res://art/inspect_symbols/activated_button.png" id="11_n3k2g"]
+[ext_resource type="Texture2D" uid="uid://cjgsl36pxi8ab" path="res://art/inspect_symbols/shift_right.png" id="12_2vem4"]
+[ext_resource type="Texture2D" uid="uid://b8r6lplduym5w" path="res://art/inspect_symbols/shift_left.png" id="13_jjcjd"]
+
+[node name="Inspect" type="Control" node_paths=PackedStringArray("title", "description", "upgrade_slot", "button", "button_label", "box_1", "box_2", "box_3", "attack", "attack_lbl", "health", "health_lbl", "max_cd", "max_cd_lbl", "current_cd", "current_cd_lbl", "manual", "manual_lbl", "speed", "speed_lbl", "attributes", "upgrade_slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4atc")
+title = NodePath("Background/VBoxContainer/Title/CenterContainer/Title")
+description = NodePath("Background/VBoxContainer/Description/CenterContainer/Description")
+upgrade_slot = NodePath("Background/VBoxContainer/UpgradeSlot/HBoxContainer")
+button = NodePath("Background/TextureButton")
+button_label = NodePath("Background/TextureButton/CenterContainer/Label")
+box_1 = NodePath("Background/VBoxContainer/HBoxContainer")
+box_2 = NodePath("Background/VBoxContainer/HBoxContainer2")
+box_3 = NodePath("Background/VBoxContainer/HBoxContainer3")
+attack = NodePath("HBoxContainer/Attack")
+attack_lbl = NodePath("HBoxContainer/Attack/HBoxContainer/MarginContainer/Label")
+health = NodePath("HBoxContainer/Health")
+health_lbl = NodePath("HBoxContainer/Health/HBoxContainer/MarginContainer/Label")
+max_cd = NodePath("HBoxContainer/MaxCooldown")
+max_cd_lbl = NodePath("HBoxContainer/MaxCooldown/HBoxContainer/MarginContainer/Label")
+current_cd = NodePath("HBoxContainer/CurrentCooldown")
+current_cd_lbl = NodePath("HBoxContainer/CurrentCooldown/HBoxContainer/MarginContainer/Label")
+manual = NodePath("HBoxContainer/Manual")
+manual_lbl = NodePath("HBoxContainer/Manual/HBoxContainer/MarginContainer/Label")
+speed = NodePath("HBoxContainer/Velocity")
+speed_lbl = NodePath("HBoxContainer/Velocity/HBoxContainer/MarginContainer/Label")
+attributes = NodePath("Background/VBoxContainer")
+upgrade_slots = NodePath("Background/VBoxContainer/UpgradeSlot")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 16.0
+offset_right = 464.0
+offset_bottom = 254.0
+texture = ExtResource("1_g01sg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 134.0
+offset_bottom = 40.0
+
+[node name="Title" type="MarginContainer" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(132, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/VBoxContainer/Title"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Background/VBoxContainer/Title/CenterContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Description" type="MarginContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/VBoxContainer/Description"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Background/VBoxContainer/Description/CenterContainer"]
+custom_minimum_size = Vector2(126, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("3_j0ffj")
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeSlot" type="CenterContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer/UpgradeSlot"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Background"]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 192.0
+offset_right = 124.0
+offset_bottom = 232.0
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("10_qhepg")
+texture_pressed = ExtResource("11_n3k2g")
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/TextureButton"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 0
+offset_top = -4.0
+offset_right = 112.0
+offset_bottom = 36.0
+
+[node name="Label" type="Label" parent="Background/TextureButton/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 8.0
+offset_right = 615.0
+offset_bottom = 48.0
+
+[node name="Health" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Health"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Health/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ha3js")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Health/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Health/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.0980392, 0.133333, 1)
+text = "6"
+
+[node name="Attack" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Attack"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Attack/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_sqoc2")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Attack/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Attack/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784314, 0.0980392, 0.133333, 1)
+text = "6"
+
+[node name="MaxCooldown" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MaxCooldown"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MaxCooldown/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_2vem4")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MaxCooldown/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MaxCooldown/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Manual" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Manual"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Manual/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_38unx")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Manual/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Manual/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="CurrentCooldown" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CurrentCooldown"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CurrentCooldown/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_jjcjd")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CurrentCooldown/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/CurrentCooldown/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Velocity" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Velocity"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Velocity/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_x3hr8")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Velocity/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Velocity/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Open" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 18.0
+offset_right = 328.0
+offset_bottom = 34.0
+toggle_mode = true
+texture_normal = ExtResource("12_2vem4")
+texture_pressed = ExtResource("13_jjcjd")
+
+[connection signal="toggled" from="Background/TextureButton" to="." method="_on_activated_toggled"]
+[connection signal="toggled" from="Open" to="." method="_on_open_toggled"]

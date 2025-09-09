@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh5dooqnlhxvk"]
+
+[ext_resource type="Texture2D" uid="uid://ddxinwk4pkdhg" path="res://art/inspect_symbols/filled_upgrade_node.png" id="1_3dipf"]
+
+[node name="UpgradedNode" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3dipf")
